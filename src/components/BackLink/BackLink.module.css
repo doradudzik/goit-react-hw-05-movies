@@ -1,0 +1,20 @@
+.backBtn {
+    background: #03001e;
+    color: black;
+    font-size: 15px;
+    padding: 2px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+}
+
+.backBtn a {
+    color: #ffffff;
+}
+
+.backBtn:hover {
+    background: #7303c0;
+    transform: scale(0.90);
+}

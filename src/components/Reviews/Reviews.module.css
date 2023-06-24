@@ -1,0 +1,21 @@
+.reviewsList {
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-left: 50px;
+    color: #ffffff;
+}
+
+.reviewsList__item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 1px solid white;
+}
+
+.reviewsList__message {
+    padding: 15px;
+    color: #ffffff;
+}

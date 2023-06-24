@@ -1,0 +1,47 @@
+.castList {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding-top: 15px;
+    padding-left: 30px;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.castList__item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    width: 300px;
+}
+
+.photoBox {
+    width: 190px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.profileImage {
+    width: 200px;
+}
+
+.defaultProfileImage {
+    width: 300px;
+}
+
+.castList__name {
+    padding-left: 15px;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    color: #ffffff;
+}
