@@ -3,10 +3,12 @@ import css from './Home.module.css';
 import MoviesList from 'components/MoviesList/MoviesList';
 import Loader from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
   useEffect(() => {
     (async () => {
       try {
@@ -24,7 +26,9 @@ const Home = () => {
   return (
     <div>
       <h1 className={css.header}>Trending today</h1>
-      <MoviesList movies={movies} />
+      {movies.length > 0 && (
+        <MoviesList movies={movies} path={'movies/'} location={location} />
+      )}
       {isLoading && movies.length > 0 && <Loader />}
     </div>
   );

@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useState, useRef } from 'react';
 import { Link, useParams, Outlet, useLocation } from 'react-router-dom';
 import css from './MovieDetails.module.css';
 import Api from 'components/Api/Api';
@@ -13,7 +13,7 @@ const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  const backLinkHref = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     (async () => {
@@ -31,7 +31,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      {!isLoading && <BackLink to={backLinkHref}>Go back</BackLink>}
+      {!isLoading && <BackLink to={backLinkHref.current}>Go back</BackLink>}
       {movieDetails.map(
         ({
           id,

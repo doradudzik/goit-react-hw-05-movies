@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams, Link, useLocation } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import css from './Movies.module.css';
-import moviesListCss from '../../components/MoviesList/MoviesList.module.css';
 import Api from 'components/Api/Api';
 import Loader from 'components/Loader/Loader';
 import { Notify } from 'notiflix';
+import MoviesList from 'components/MoviesList/MoviesList';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -66,15 +66,7 @@ const Movies = () => {
         </button>
       </form>
       {movies.length > 0 && (
-        <ul className={moviesListCss.movieList}>
-          {movies.map(({ id, title }) => (
-            <li key={id}>
-              <Link to={`/movies/${id}`} state={{ from: location }}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <MoviesList movies={movies} location={location} path={''} />
       )}
       {isLoading && movies.length > 0 && <Loader />}
     </>
