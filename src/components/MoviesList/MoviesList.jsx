@@ -18,5 +18,7 @@ const MoviesList = ({ movies, location, path }) => {
 
 MoviesList.propTypes = {
   movies: PropTypes.array.isRequired,
+  location: PropTypes.object,
+  path: PropTypes.string,
 };
 export default MoviesList;
